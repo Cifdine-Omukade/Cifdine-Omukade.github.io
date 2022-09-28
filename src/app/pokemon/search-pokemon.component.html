@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card">
+        <div class="card-content">
+          <div class="input-field">
+            <input #searchBox (keyup)="search(searchBox.value)"
+              placeholder="Rechercher un pokémon"/>
+          </div>
+    
+          <div class="collection">
+              <!-- Le $ de pokemon $ est une convention pour dire que ce n'est pas une variable statique mais une observable-->
+            <a *ngFor="let pokemon of pokemons$ | async"
+              (click)="gotoDetail(pokemon)" class="collection-item">
+              {{ pokemon.name }} <!-- Async est obligatoire car il s'agit d'une observable il permet d'afficher le resultat qu'une fois
+            la requete achevée-->
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

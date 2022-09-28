@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <title>Poke</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <script src="./systemjs.config.server.js"></script> 
+    <!--preparation du deploiement on charge depuis systemjs.config.server.js 
+      qui va telecharge les paquets necessaire depus le site unpackage-->
+    <script>
+      System.import('/dist/main.js').catch(function(err){console.error(err);});
+    </script>
+  
+</head>
+<body>
+  <app-root></app-root>
+</body>
+
+</html>
